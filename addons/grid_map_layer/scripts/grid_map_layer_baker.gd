@@ -44,7 +44,7 @@ var tileset_source:TileSetAtlasSource:
 			var tiles:Array[Dictionary] = data.get_custom_data(data_layer_name)
 			for tile_index:int in range(tiles.size()):
 				var tile:Dictionary = tiles[tile_index]
-				var subgrid_position:Vector3i = gridmap_position + Vector3i(tile_index % (tile_subdivision+1), 0, tile_index / tile_subdivision)
+				var subgrid_position:Vector3i = gridmap_position + Vector3i(tile_index % (tile_subdivision+1), 0, tile_index / (tile_subdivision+1))
 				set_cell_item(subgrid_position, tile.get("id"), tile.get("orientation"))
 
 @export_tool_button("Save Data to TileSet") var bake_data = func():
